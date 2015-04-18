@@ -1,0 +1,32 @@
+﻿<div class="panel panel-primary"
+	 ng-controller="BeerListController as vm">
+	<div class="panel-heading"
+		 style="font-size:large">
+		Beer List
+	</div>
+	<div class="panel-body">
+		<table class="table">
+
+			<thead>
+				<tr>
+					<td>Name</td>
+					<td>Brewery</td>
+					<td>Style</td>
+					<td>Date of Tasting</td>
+					<td>Jason's Rating</td>
+					<td>Val's Rating</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="beer in vm.beers">
+					<td>{{ beer.name}}</td>
+					<td>{{ beer.brewery }}</td>
+					<td>{{ beer.style }}</td>
+					<td>{{ beer.dateOfTasting | date }}</td>
+					<td>{{ beer.jasonRating }}</td>
+					<td>{{ beer.valRating }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
