@@ -1,0 +1,92 @@
+﻿[
+	{
+		"Id": 397,
+		"Name": "Naughty Aud Imperial Stout",
+		"Brewery": "101 North",
+		"Style": "Imperial Stout",
+		"DateOfTasting": "2015-03-16T00:00:00-08:00",
+		"JasonRating": 3,
+		"ValRating": 4
+	},
+	{
+		"Id": 398,
+		"Name": "India Pale Ale",
+		"Brewery": "Rubicon",
+		"Style": "India Pale Ale",
+		"DateOfTasting": "2015-03-19T00:00:00-08:00",
+		"JasonRating": 2,
+		"ValRating": 2
+	},
+	{
+		"Id": 399,
+		"Name": "Stigmata American Red Rye Ale",
+		"Brewery": "101 North",
+		"Style": "Specialty Grain",
+		"DateOfTasting": "2015-03-21T00:00:00-08:00",
+		"JasonRating": 4,
+		"ValRating": 4
+	},
+	{
+		"Id": 400,
+		"Name": "Speedway Stout",
+		"Brewery": "AleSmith",
+		"Style": "Imperial Stout",
+		"DateOfTasting": "2015-03-26T00:00:00-08:00",
+		"JasonRating": 4,
+		"ValRating": 4
+	},
+	{
+		"Id": 401,
+		"Name": "Andygator",
+		"Brewery": "Abita",
+		"Style": "Doppelbock",
+		"DateOfTasting": "2015-03-24T00:00:00-08:00",
+		"JasonRating": 2,
+		"ValRating": 2
+	},
+	{
+		"Id": 402,
+		"Name": "Heady Topper",
+		"Brewery": "The Alchemist",
+		"Style": "Imperial/Double IPA",
+		"DateOfTasting": "2015-03-28T00:00:00-08:00",
+		"JasonRating": 4,
+		"ValRating": 0
+	},
+	{
+		"Id": 403,
+		"Name": "Breakfast Stout",
+		"Brewery": "Founders",
+		"Style": "Imperial Stout",
+		"DateOfTasting": "2015-04-01T00:00:00-08:00",
+		"JasonRating": 4,
+		"ValRating": 4
+	},
+	{
+		"Id": 404,
+		"Name": "The Devil Went Down To Oregon",
+		"Brewery": "Ninkasi",
+		"Style": "Speciality Grain",
+		"DateOfTasting": "2015-04-04T00:00:00-08:00",
+		"JasonRating": 4,
+		"ValRating": 4
+	},
+	{
+		"Id": 405,
+		"Name": "Golden Naked Ale",
+		"Brewery": "101 North",
+		"Style": "Golden Ale/Blonde Ale",
+		"DateOfTasting": "2015-04-05T00:00:00-08:00",
+		"JasonRating": 3,
+		"ValRating": 3
+	},
+	{
+		"Id": 406,
+		"Name": "Hops of Wrath",
+		"Brewery": "Dust Bowl",
+		"Style": "India Pale Ale",
+		"DateOfTasting": "2015-04-12T00:00:00-08:00",
+		"JasonRating": 2,
+		"ValRating": 3
+	}
+]
