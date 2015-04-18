@@ -18,6 +18,7 @@ namespace NamaBeer.WebAPI.Models
 			{
 				DateOfTasting = DateTime.Now
 			};
+
 			return product;
 		}
 
@@ -43,6 +44,7 @@ namespace NamaBeer.WebAPI.Models
 			beers.Add(beer);
 
 			WriteData(beers);
+
 			return beer;
 		}
 
@@ -63,6 +65,7 @@ namespace NamaBeer.WebAPI.Models
 			}
 
 			WriteData(beers);
+
 			return beer;
 		}
 
