@@ -5,9 +5,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace NamaBeer.WebAPI.Controllers
 {
+	[EnableCors("*", "*", "*")]
     public class BeersController : ApiController
     {
         // GET: api/Beers

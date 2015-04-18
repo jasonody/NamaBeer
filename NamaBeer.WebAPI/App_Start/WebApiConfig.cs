@@ -14,11 +14,17 @@ namespace NamaBeer.WebAPI
         {
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
-            config.SuppressDefaultHostAuthentication();
-            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+            //config.SuppressDefaultHostAuthentication();
+            //config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
+			//Camel case property names in JSON returned by WebAPI
+			config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
+				new CamelCasePropertyNamesContractResolver();
+
+			config.EnableCors();
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
