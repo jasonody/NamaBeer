@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web.OData;
 
 namespace NamaBeer.WebAPI.Controllers
 {
@@ -13,6 +14,7 @@ namespace NamaBeer.WebAPI.Controllers
     public class BeersController : ApiController
     {
         // GET: api/Beers
+		[EnableQuery(PageSize=20)]
         public IEnumerable<Beer> Get()
         {
 			var beerRepository = new BeerRepository();
