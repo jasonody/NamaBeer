@@ -8,35 +8,33 @@ using System.Web.Hosting;
 namespace NamaBeer.WebAPI.Models
 {
 	/// <summary>
-	/// Stores the data in a json file so that no database is required
+	/// Stores the data in a json file so the data layer can be implemented later
 	/// </summary>
-	public class BeerRepository
+	public class BeerRepository : IBeerRepository
 	{
-		internal Beer Create()
-		{
-			var product = new Beer
-			{
-				DateOfTasting = DateTime.Now
-			};
-
-			return product;
-		}
-
-		internal List<Beer> Retrieve()
+		public IEnumerable<Beer> Get()
 		{
 			var filePath = HostingEnvironment.MapPath(@"~/App_Data/beer.json");
 
 			var json = System.IO.File.ReadAllText(filePath);
 
-			var products = JsonConvert.DeserializeObject<List<Beer>>(json);
+			var beers = JsonConvert.DeserializeObject<List<Beer>>(json);
 
-			return products;
+			return beers;
 		}
 
-		internal Beer Save(Beer beer)
+		public Beer Get(int id)
+		{
+			var beers = Get();
+			var beer = beers.FirstOrDefault(b => b.Id == id);
+
+			return beer;
+		}
+
+		public Beer Add(Beer beer)
 		{
 			// Read in the existing products
-			var beers = this.Retrieve();
+			var beers = this.Get() as List<Beer>;
 
 			// Assign a new Id
 			var maxId = beers.Max(b => b.Id);
@@ -48,10 +46,10 @@ namespace NamaBeer.WebAPI.Models
 			return beer;
 		}
 
-		internal Beer Save(int id, Beer beer)
+		public Beer Update(Beer beer)
 		{
 			// Read in the existing products
-			var beers = this.Retrieve();
+			var beers = this.Get() as List<Beer>;
 
 			// Locate and replace the item
 			var itemIndex = beers.FindIndex(b => b.Id == beer.Id);
@@ -70,7 +68,7 @@ namespace NamaBeer.WebAPI.Models
 		}
 
 
-		private bool WriteData(List<Beer> beers)
+		private bool WriteData(IEnumerable<Beer> beers)
 		{
 			// Write out the Json
 			var filePath = HostingEnvironment.MapPath(@"~/App_Data/beer.json");

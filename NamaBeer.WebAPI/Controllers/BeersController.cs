@@ -13,29 +13,36 @@ namespace NamaBeer.WebAPI.Controllers
 	[EnableCors("*", "*", "*")]
     public class BeersController : ApiController
     {
+		private readonly IBeerRepository _beerRepository;
+
+		public BeersController(IBeerRepository beerRepository)
+		{
+			_beerRepository = beerRepository;
+		}
+
         // GET: api/Beers
 		[EnableQuery(PageSize=20)]
-        public IEnumerable<Beer> Get()
+        public IQueryable<Beer> Get()
         {
-			var beerRepository = new BeerRepository();
-
-			return beerRepository.Retrieve();
+			return _beerRepository.Get().AsQueryable();
         }
 
         // GET: api/Beers/5
         public Beer Get(int id)
         {
 			Beer beer = null;
-			var beerRepository = new BeerRepository();
 
 			if (id > 0)
 			{
-				var beers = beerRepository.Retrieve();
+				var beers = _beerRepository.Get();
 				beer = beers.FirstOrDefault(b => b.Id == id);
 			}
 			else
 			{
-				beer = beerRepository.Create();
+				beer = new Beer()
+				{
+					DateOfTasting = DateTime.Now
+				};
 			}
 
 			return beer;
