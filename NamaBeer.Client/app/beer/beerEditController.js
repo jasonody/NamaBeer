@@ -28,5 +28,5 @@
 
 			delete state.originalBeer;
 		};
-	};
+	}
 }());
