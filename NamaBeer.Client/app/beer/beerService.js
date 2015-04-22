@@ -11,7 +11,21 @@
 
 		return $resource(settings.serverPath + '/api/beers/:id', null,
 			{
-				'update': { method: 'PUT' }
+				query: {
+					method: 'GET',
+					isArray: true,
+					transformResponse: function (data, headersGetter) {
+
+						var beers = angular.fromJson(data);
+
+						beers.forEach(function (beer) {
+							beer.dateOfTasting = new Date(beer.dateOfTasting);
+						});
+						
+						return beers;
+					}
+				},
+				update: { method: 'PUT' }
 			});
 	};
 

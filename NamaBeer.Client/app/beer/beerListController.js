@@ -5,9 +5,9 @@
 		.module('nama')
 		.controller('BeerListController', BeerListController);
 
-	BeerListController.$inject = ['beerService'];
+	BeerListController.$inject = ['beerService', 'state'];
 
-	function BeerListController(beerService) {
+	function BeerListController(beerService, state) {
 
 		var vm = this;
 		var sortDirection = 'desc';
@@ -25,6 +25,13 @@
 
 			sortColumn = column;
 		}
+
+		vm.edit = function (beer) {
+
+			state.title = "Edit Beer";
+			state.originalBeer = beer;
+			state.beer = angular.copy(beer);
+		};
 
 		function init() {
 

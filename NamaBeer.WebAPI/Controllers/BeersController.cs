@@ -54,7 +54,7 @@ namespace NamaBeer.WebAPI.Controllers
         }
 
         // PUT: api/Beers/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]Beer beer)
         {
         }
 
