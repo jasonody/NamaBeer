@@ -26,6 +26,13 @@
 			state.originalBeer.jasonRating = state.beer.jasonRating;
 			state.originalBeer.valRating = state.beer.valRating;
 
+			state.originalBeer.$update({ id: state.originalBeer.id },
+				function (data) {
+
+					//Toastr message about successful udpate
+				}
+			);
+
 			delete state.originalBeer;
 		};
 	}

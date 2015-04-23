@@ -56,6 +56,9 @@ namespace NamaBeer.WebAPI.Controllers
         // PUT: api/Beers/5
         public void Put(int id, [FromBody]Beer beer)
         {
+			//Validate id = beer.id;
+
+			var updatedBeer = _beerRepository.Update(beer);
         }
 
         // DELETE: api/Beers/5
