@@ -3,7 +3,10 @@
 
 	angular
 		.module('nama',
-			['ngResource']
+			['ngResource',
+			 'ngAnimate',
+			 'ui.bootstrap',
+			 'toastr']
 		);
 
 }());

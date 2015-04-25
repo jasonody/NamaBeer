@@ -5,31 +5,27 @@
     .module('nama')
     .controller('BeerEditController', BeerEditController);
 
-	BeerEditController.$inject = ['state'];
+	BeerEditController.$inject = ['toastr', '$modalInstance', 'state'];
 
-	function BeerEditController(state) {
+	function BeerEditController(toastr, $modalInstance, state) {
 
 		var vm = this;
-		vm.state = state;
+		vm.title = state.title;
+		vm.beer = state.beer;
 		
 		vm.cancel = function (form) {
 
+			$modalInstance.dismiss();
 			delete state.originalBeer;
 		};
 
 		vm.save = function () {
 
-			state.originalBeer.name = state.beer.name;
-			state.originalBeer.brewery = state.beer.brewery;
-			state.originalBeer.style = state.beer.style;
-			state.originalBeer.dateOfTasting = state.beer.dateOfTasting;
-			state.originalBeer.jasonRating = state.beer.jasonRating;
-			state.originalBeer.valRating = state.beer.valRating;
-
-			state.originalBeer.$update({ id: state.originalBeer.id },
+			vm.beer.$update({ id: vm.beer.id },
 				function (data) {
 
-					//Toastr message about successful udpate
+					toastr.success(vm.beer.name + " successfully updated.");
+					$modalInstance.close(vm.beer);
 				}
 			);
 

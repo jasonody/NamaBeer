@@ -5,9 +5,9 @@
 		.module('nama')
 		.controller('BeerListController', BeerListController);
 
-	BeerListController.$inject = ['beerService', 'state'];
+	BeerListController.$inject = ['beerService', '$modal'];
 
-	function BeerListController(beerService, state) {
+	function BeerListController(beerService, $modal) {
 
 		var vm = this;
 		var sortDirection = 'desc';
@@ -28,9 +28,29 @@
 
 		vm.edit = function (beer) {
 
-			state.title = "Edit Beer";
-			state.originalBeer = beer;
-			state.beer = angular.copy(beer);
+			var editModal = $modal.open({
+				templateUrl: 'app/beer/beerEdit.html',
+				controller: 'BeerEditController',
+				controllerAs: 'vm',
+				resolve: {
+					state: function () {
+						return {
+							title: "Edit Beer",
+							beer: angular.copy(beer)
+						};
+					}
+				}
+			});
+
+			editModal.result.then(function (updatedBeer) {
+
+				beer.name = updatedBeer.name;
+				beer.brewery = updatedBeer.brewery;
+				beer.style = updatedBeer.style;
+				beer.dateOfTasting = updatedBeer.dateOfTasting;
+				beer.jasonRating = updatedBeer.jasonRating;
+				beer.valRating = updatedBeer.valRating;
+			});
 		};
 
 		function init() {
