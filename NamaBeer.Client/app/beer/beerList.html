@@ -1,8 +1,8 @@
 ﻿<div class="panel panel-primary"
 	 ng-controller="BeerListController as vm">
-	<div class="panel-heading"
-		 style="font-size:large">
-		Beer List
+	<div class="panel-heading">
+		<h4 class="inline-block">Beer List</h4>
+		<button class="btn btn-default pull-right" ng-click="vm.add()">Add New Beer</button>
 	</div>
 	<div class="panel-body">
 		<table class="table">

@@ -31,26 +31,17 @@ namespace NamaBeer.WebAPI.Controllers
         public Beer Get(int id)
         {
 			Beer beer = null;
-
-			if (id > 0)
-			{
-				var beers = _beerRepository.Get();
-				beer = beers.FirstOrDefault(b => b.Id == id);
-			}
-			else
-			{
-				beer = new Beer()
-				{
-					DateOfTasting = DateTime.Now
-				};
-			}
+			
+			var beers = _beerRepository.Get();
+			beer = beers.FirstOrDefault(b => b.Id == id);
 
 			return beer;
         }
 
         // POST: api/Beers
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Beer beer)
         {
+			var addedBeer = _beerRepository.Add(beer);
         }
 
         // PUT: api/Beers/5

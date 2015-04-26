@@ -5,13 +5,15 @@
 		.module('nama')
 		.controller('BeerListController', BeerListController);
 
-	BeerListController.$inject = ['beerService', '$modal'];
+	BeerListController.$inject = ['Beer', '$modal'];
 
-	function BeerListController(beerService, $modal) {
+	function BeerListController(Beer, $modal) {
 
 		var vm = this;
 		var sortDirection = 'desc';
 		var sortColumn = 'DateOfTasting';
+		
+		vm.beers = [];
 
 		vm.sort = function (column) {
 
@@ -21,10 +23,10 @@
 				sortDirection = 'asc';
 			}
 
-			beerService.query({ $orderby: column + ' ' + sortDirection }, bindBeers);
+			Beer.query({ $orderby: column + ' ' + sortDirection }, bindBeers);
 
 			sortColumn = column;
-		}
+		};
 
 		vm.edit = function (beer) {
 
@@ -53,15 +55,36 @@
 			});
 		};
 
+		vm.add = function () {
+
+			var addModal = $modal.open({
+				templateUrl: 'app/beer/beerEdit.html',
+				controller: 'BeerEditController',
+				controllerAs: 'vm',
+				resolve: {
+					state: function () {
+						return {
+							title: "Add New Beer",
+							beer: new Beer({ dateOfTasting: new Date() })
+						};
+					}
+				}
+			});
+
+			addModal.result.then(function (newBeer) {
+				vm.beers.push(newBeer);
+			});
+		};
+
 		function init() {
 
-			beerService.query({ $orderby: sortColumn + ' ' + sortDirection }, bindBeers);
-		};
+			Beer.query({ $orderby: sortColumn + ' ' + sortDirection }, bindBeers);
+		}
 
 		function bindBeers(beers) {
 
 			vm.beers = beers;
-		};
+		}
 
 		init();
 	}

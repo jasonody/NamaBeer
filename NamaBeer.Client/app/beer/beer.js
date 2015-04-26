@@ -3,11 +3,11 @@
 
 	angular
 		.module('nama')
-		.factory('beerService', beerService);
+		.factory('Beer', Beer);
 
-	beerService.$inject = ['$resource', 'settings'];
+	Beer.$inject = ['$resource', 'settings'];
 
-	function beerService($resource, settings) {
+	function Beer($resource, settings) {
 
 		return $resource(settings.serverPath + '/api/beers/:id', null,
 			{
