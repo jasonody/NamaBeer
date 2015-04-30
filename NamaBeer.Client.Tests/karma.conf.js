@@ -23,6 +23,8 @@ module.exports = function(config) {
 			'../NamaBeer.Client/scripts/angular-animate.js',
 			'../NamaBeer.Client/scripts/angular-mocks.js',
       '../NamaBeer.Client/app/**/*.js',
+			'./node_modules/bardjs/bower_components/sinon/index.js', //required for bardjs
+			'./node_modules/bardjs/dist/bard.js',
       './app/**/*Spec.js'
     ],
 

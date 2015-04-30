@@ -9,7 +9,7 @@
 
 	function Beer($resource, settings) {
 
-		return $resource(settings.serverPath + '/api/beers/:id', null,
+		return $resource(settings.serverPath + '/api/beers/:id', { id: '@id' },
 			{
 				query: {
 					method: 'GET',
