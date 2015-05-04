@@ -24,8 +24,8 @@
 					<td>{{ beer.brewery }}</td>
 					<td>{{ beer.style }}</td>
 					<td>{{ beer.dateOfTasting | date }}</td>
-					<td>{{ beer.jasonRating }}</td>
-					<td>{{ beer.valRating }}</td>
+					<td><nama-rating value="beer.jasonRating" min="1" max="5" readonly></nama-rating></td>
+					<td><nama-rating value="beer.valRating" min="1" max="5" readonly></nama-rating></td>
 					<td>
 						<button class="btn btn-default" ng-click="vm.edit(beer)">
 							Edit

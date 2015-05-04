@@ -1,7 +1,7 @@
 {
   "name": "NamaBeer.Client.Tests",
   "version": "0.1.0",
-  "description": "AngularJS tests for NamaBeer"
+  "description": "AngularJS tests for NamaBeer",
   "dependencies": {},
   "devDependencies": {
     "bardjs": "^0.1.0",
