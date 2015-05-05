@@ -22,7 +22,7 @@ describe('BeerListController', function () {
 		var Beer = function () {};
 		Beer.query = function (options, next) {
 
-			beerOptions = options;;
+			beerOptions = options;
 			next(beers);
 		};
 		
@@ -65,7 +65,7 @@ describe('BeerListController', function () {
 			
 			deferred = $q.defer();
 			spyOn($modal, ['open']).and.returnValue({ result: deferred.promise });
-		})
+		});
 		
 		it('should open a modal dialog', function () {
 			

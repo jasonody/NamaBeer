@@ -2,7 +2,7 @@
 	 ng-controller="BeerListController as vm">
 	<div class="panel-heading">
 		<h4 class="inline-block">Beer List</h4>
-		<button class="btn btn-default pull-right" ng-click="vm.add()">Add New Beer</button>
+		<button class="btn btn-default pull-right" ng-click="vm.add()">Add a new beer</button>
 	</div>
 	<div class="panel-body">
 		<table class="table">
@@ -24,8 +24,8 @@
 					<td>{{ beer.brewery }}</td>
 					<td>{{ beer.style }}</td>
 					<td>{{ beer.dateOfTasting | date }}</td>
-					<td><nama-rating value="beer.jasonRating" min="1" max="5" readonly></nama-rating></td>
-					<td><nama-rating value="beer.valRating" min="1" max="5" readonly></nama-rating></td>
+					<td><nama-rating value="beer.jasonRating" max="5"></nama-rating></td>
+					<td><nama-rating value="beer.valRating" max="5"></nama-rating></td>
 					<td>
 						<button class="btn btn-default" ng-click="vm.edit(beer)">
 							Edit

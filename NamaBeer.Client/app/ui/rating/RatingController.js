@@ -11,9 +11,9 @@
 
 		var vm = this;
 		
-		this.initialize = function (min, max) {
+		this.initialize = function (max) {
 
-			vm.stars = new Array(max - min + 1);
+			vm.stars = new Array(max);
 		};
 
 		vm.styles = function ($index) {

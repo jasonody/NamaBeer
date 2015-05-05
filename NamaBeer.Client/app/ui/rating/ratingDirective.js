@@ -21,10 +21,9 @@
 			},
 			link: function (scope, element, attributes, controller) {
 
-				var min = parseInt(attributes.min || "1");
 				var max = parseInt(attributes.max || "10");
 
-				controller.initialize(min, max);
+				controller.initialize(max);
 			}
 		};
 	}
