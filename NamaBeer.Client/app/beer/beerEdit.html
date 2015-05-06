@@ -5,82 +5,71 @@
 		</button>
 		<h3 class="modal-title">{{vm.title}}</h3>
 	</div>
-	<div class="modal-body">
-		<form class="form-horizontal"
-			  name="beerForm"
-			  novalidate>
+	<form class="form-horizontal"
+		  name="beerForm"
+		  novalidate>
+		<div class="modal-body">
 			<fieldset>
-
-				<div class="form-group"
-					 ng-class="{ 'has-error': beerForm.inputName.$invalid &&
-												beerForm.inputName.$dirty }">
-					<label class="col-md-2 control-label" for="inputName">Name</label>
+				<div nama-formgroup>
+					<label class="col-md-2" for="inputName">Name</label>
 					<div class="col-md-7">
-						<input class="form-control" id="inputName" name="inputName" type="text"
+						<input id="inputName" name="inputName" type="text"
 							   placeholder="Name" ng-model="vm.beer.name"
 							   required />
 					</div>
 					<div class="col-md-3 help-block has-error">
-						<span ng-show="beerForm.inputName.$error.required">
+						<span ng-show="beerForm.inputName.$error.required && beerForm.inputName.$dirty">
 							Name is required
 						</span>
 					</div>
 				</div>
 
-				<div class="form-group"
-					 ng-class="{ 'has-error': beerForm.inputBrewery.$invalid &&
-												beerForm.inputBrewery.$dirty }">
-					<label class="col-md-2 control-label" for="inputBrewery">Brewery</label>
+				<div nama-formgroup>
+					<label class="col-md-2" for="inputBrewery">Brewery</label>
 					<div class="col-md-6">
-						<input class="form-control" id="inputBrewery" name="inputBrewery" type="text"
+						<input id="inputBrewery" name="inputBrewery" type="text"
 							   placeholder="Brewery" ng-model="vm.beer.brewery"
 							   required />
 					</div>
 					<div class="col-md-4 help-block has-error">
-						<span ng-show="beerForm.inputBrewery.$error.required">
+						<span ng-show="beerForm.inputBrewery.$error.required && beerForm.inputBrewery.$dirty">
 							Brewery is required
 						</span>
 					</div>
 				</div>
 
-				<div class="form-group"
-					 ng-class="{ 'has-error': beerForm.inputStyle.$invalid &&
-												beerForm.inputStyle.$dirty }">
-					<label class="col-md-2 control-label" for="inputStyle">Style</label>
+				<div nama-formgroup>
+					<label class="col-md-2" for="inputStyle">Style</label>
 					<div class="col-md-6">
-						<input class="form-control" id="inputStyle" name="inputStyle" type="text"
+						<input id="inputStyle" name="inputStyle" type="text"
 							   placeholder="Style" ng-model="vm.beer.style"
 							   required />
 					</div>
 					<div class="col-md-4 help-block has-error">
-						<span ng-show="beerForm.inputStyle.$error.required">
+						<span ng-show="beerForm.inputStyle.$error.required && beerForm.inputStyle.$dirty">
 							Style is required
 						</span>
 					</div>
 				</div>
 
-				<div class="form-group"
-					 ng-class="{ 'has-error': beerForm.inputDate.$invalid &&
-												beerForm.inputDate.$dirty }">
-					<label class="col-md-2 control-label" for="inputDate">Date</label>
+				<div nama-formgroup>
+					<label class="col-md-2" for="inputDate">Date</label>
 					<div class="col-md-6">
-						<input class="form-control" id="inputDate" name="inputDate" type="date"
+						<input id="inputDate" name="inputDate" type="date"
 							   placeholder="Date of Tasting"
 							   ng-model="vm.beer.dateOfTasting" required />
 					</div>
 					<div class="col-md-4 help-block has-error">
-						<span ng-show="beerForm.inputDate.$error.required">
+						<span ng-show="beerForm.inputDate.$error.required && beerForm.inputDate.$dirty">
 							Date is required
 						</span>
 					</div>
 				</div>
 
-				<div class="form-group"
-					 ng-class="{ 'has-error': beerForm.inputJasonRating.$invalid &&
-												beerForm.inputJasonRating.$dirty }">
-					<label class="col-md-3 control-label" for="inputJasonRating">Jason's Rating</label>
+				<div nama-formgroup>
+					<label class="col-md-3" for="inputJasonRating">Jason's Rating</label>
 					<div class="col-md-2">
-						<input class="form-control" id="inputJasonRating" name="inputJasonRating"
+						<input id="inputJasonRating" name="inputJasonRating"
 							   type="number" ng-model="vm.beer.jasonRating"
 							   min="0" max="5" />
 					</div>
@@ -97,12 +86,10 @@
 					</div>
 				</div>
 
-				<div class="form-group"
-					 ng-class="{ 'has-error': beerForm.inputValRating.$invalid &&
-												beerForm.inputValRating.$dirty }">
-					<label class="col-md-3 control-label" for="inputValRating">Val's Rating</label>
+				<div nama-formgroup>
+					<label class="col-md-3" for="inputValRating">Val's Rating</label>
 					<div class="col-md-2">
-						<input class="form-control" id="inputValRating" name="inputValRating"
+						<input id="inputValRating" name="inputValRating"
 							   type="number" ng-model="vm.beer.valRating"
 							   min="0" max="5" />
 					</div>
@@ -120,10 +107,10 @@
 				</div>
 
 			</fieldset>
-		</form>
-	</div>
-	<div class="modal-footer">
-		<button class="btn btn-default" ng-click="vm.cancel()">Cancel</button>
-		<button class="btn btn-primary" ng-click="vm.save()">Save</button>
-	</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-default" ng-click="vm.cancel()">Cancel</button>
+			<button class="btn btn-primary" ng-disabled="beerForm.$invalid" ng-click="vm.save()">Save</button>
+		</div>
+	</form>
 </div>
