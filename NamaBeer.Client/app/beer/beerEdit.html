@@ -12,15 +12,14 @@
 			<fieldset>
 				<div nama-formgroup>
 					<label class="col-md-2" for="inputName">Name</label>
-					<div class="col-md-7">
+					<div class="col-md-6">
 						<input id="inputName" name="inputName" type="text"
 							   placeholder="Name" ng-model="vm.beer.name"
 							   required />
 					</div>
-					<div class="col-md-3 help-block has-error">
-						<span ng-show="beerForm.inputName.$error.required && beerForm.inputName.$dirty">
-							Name is required
-						</span>
+					<div class="col-md-4 help-block" ng-messages="beerForm.inputName.$error"
+						 ng-show="beerForm.inputName.$dirty"
+						 ng-messages-include="app/ui/forms/errorMessages.html">
 					</div>
 				</div>
 
@@ -31,10 +30,9 @@
 							   placeholder="Brewery" ng-model="vm.beer.brewery"
 							   required />
 					</div>
-					<div class="col-md-4 help-block has-error">
-						<span ng-show="beerForm.inputBrewery.$error.required && beerForm.inputBrewery.$dirty">
-							Brewery is required
-						</span>
+					<div class="col-md-4 help-block" ng-messages="beerForm.inputBrewery.$error"
+						 ng-show="beerForm.inputBrewery.$dirty"
+						 ng-messages-include="app/ui/forms/errorMessages.html">
 					</div>
 				</div>
 
@@ -45,10 +43,9 @@
 							   placeholder="Style" ng-model="vm.beer.style"
 							   required />
 					</div>
-					<div class="col-md-4 help-block has-error">
-						<span ng-show="beerForm.inputStyle.$error.required && beerForm.inputStyle.$dirty">
-							Style is required
-						</span>
+					<div class="col-md-4 help-block" ng-messages="beerForm.inputStyle.$error"
+						 ng-show="beerForm.inputStyle.$dirty"
+						 ng-messages-include="app/ui/forms/errorMessages.html">
 					</div>
 				</div>
 
@@ -59,10 +56,9 @@
 							   placeholder="Date of Tasting"
 							   ng-model="vm.beer.dateOfTasting" required />
 					</div>
-					<div class="col-md-4 help-block has-error">
-						<span ng-show="beerForm.inputDate.$error.required && beerForm.inputDate.$dirty">
-							Date is required
-						</span>
+					<div class="col-md-4 help-block" ng-messages="beerForm.inputDate.$error"
+						 ng-show="beerForm.inputDate.$dirty"
+						 ng-messages-include="app/ui/forms/errorMessages.html">
 					</div>
 				</div>
 
@@ -73,16 +69,9 @@
 							   type="number" ng-model="vm.beer.jasonRating"
 							   min="0" max="5" />
 					</div>
-					<div class="col-md-7 help-block has-error">
-						<span ng-show="beerForm.inputJasonRating.$error.min">
-							Rating cannot be less than 0
-						</span>
-						<span ng-show="beerForm.inputJasonRating.$error.max">
-							Rating cannot be more than 5
-						</span>
-						<span ng-show="beerForm.inputJasonRating.$error.number">
-							Rating can only be a number between 0 and 5
-						</span>
+					<div class="col-md-7 help-block" ng-messages="beerForm.inputJasonRating.$error"
+						 ng-show="beerForm.inputJasonRating.$dirty"
+						 ng-messages-include="app/ui/forms/errorMessages.html">
 					</div>
 				</div>
 
@@ -93,16 +82,9 @@
 							   type="number" ng-model="vm.beer.valRating"
 							   min="0" max="5" />
 					</div>
-					<div class="col-md-7 help-block has-error">
-						<span ng-show="beerForm.inputValRating.$error.min">
-							Rating cannot be less than 0
-						</span>
-						<span ng-show="beerForm.inputValRating.$error.max">
-							Rating cannot be more than 5
-						</span>
-						<span ng-show="beerForm.inputValRating.$error.number">
-							Rating can only be a number between 0 and 5
-						</span>
+					<div class="col-md-7 help-block" ng-messages="beerForm.inputValRating.$error"
+						 ng-show="beerForm.inputValRating.$dirty"
+						 ng-messages-include="app/ui/forms/errorMessages.html">
 					</div>
 				</div>
 

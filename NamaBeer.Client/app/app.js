@@ -6,6 +6,7 @@
 			['nama.ui',
 				'ngResource',
 				'ngAnimate',
+				'ngMessages',
 				'ui.bootstrap',
 				'toastr']
 		);

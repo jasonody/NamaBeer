@@ -16,6 +16,11 @@
 
 			vm.isCollapsed = !vm.isCollapsed;
 		};
+
+		vm.login = function () {
+			console.log(vm.password);
+			console.log(vm.username);
+		};
 	};
 
 }());

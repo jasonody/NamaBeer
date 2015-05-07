@@ -12,14 +12,14 @@
 
 		<!-- Content to toggle -->
 		<div class="collapse navbar-collapse" collapse="vm.isCollapsed">
-			<form class="navbar-form navbar-right">
+			<form class="navbar-form navbar-right" ng-submit="vm.login()">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="username" />
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="password" />
 				</div>
-				<button type="button" class="btn btn-default">Login</button>
+				<button type="submit" class="btn btn-default">Login</button>
 				<div ng-show="vm.message">{{vm.message}}</div>
 			</form>
 		</div>
