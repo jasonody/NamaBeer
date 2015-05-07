@@ -17,10 +17,7 @@
 							   placeholder="Name" ng-model="vm.beer.name"
 							   required />
 					</div>
-					<div class="col-md-4 help-block" ng-messages="beerForm.inputName.$error"
-						 ng-show="beerForm.inputName.$dirty"
-						 ng-messages-include="app/ui/forms/errorMessages.html">
-					</div>
+					<div class="col-md-4" nama-formerrors></div>
 				</div>
 
 				<div nama-formgroup>
@@ -30,10 +27,7 @@
 							   placeholder="Brewery" ng-model="vm.beer.brewery"
 							   required />
 					</div>
-					<div class="col-md-4 help-block" ng-messages="beerForm.inputBrewery.$error"
-						 ng-show="beerForm.inputBrewery.$dirty"
-						 ng-messages-include="app/ui/forms/errorMessages.html">
-					</div>
+					<div class="col-md-4" nama-formerrors></div>
 				</div>
 
 				<div nama-formgroup>
@@ -43,10 +37,7 @@
 							   placeholder="Style" ng-model="vm.beer.style"
 							   required />
 					</div>
-					<div class="col-md-4 help-block" ng-messages="beerForm.inputStyle.$error"
-						 ng-show="beerForm.inputStyle.$dirty"
-						 ng-messages-include="app/ui/forms/errorMessages.html">
-					</div>
+					<div class="col-md-4" nama-formerrors></div>
 				</div>
 
 				<div nama-formgroup>
@@ -56,10 +47,7 @@
 							   placeholder="Date of Tasting"
 							   ng-model="vm.beer.dateOfTasting" required />
 					</div>
-					<div class="col-md-4 help-block" ng-messages="beerForm.inputDate.$error"
-						 ng-show="beerForm.inputDate.$dirty"
-						 ng-messages-include="app/ui/forms/errorMessages.html">
-					</div>
+					<div class="col-md-4" nama-formerrors></div>
 				</div>
 
 				<div nama-formgroup>
@@ -69,10 +57,7 @@
 							   type="number" ng-model="vm.beer.jasonRating"
 							   min="0" max="5" />
 					</div>
-					<div class="col-md-7 help-block" ng-messages="beerForm.inputJasonRating.$error"
-						 ng-show="beerForm.inputJasonRating.$dirty"
-						 ng-messages-include="app/ui/forms/errorMessages.html">
-					</div>
+					<div class="col-md-7" nama-formerrors></div>
 				</div>
 
 				<div nama-formgroup>
@@ -82,10 +67,7 @@
 							   type="number" ng-model="vm.beer.valRating"
 							   min="0" max="5" />
 					</div>
-					<div class="col-md-7 help-block" ng-messages="beerForm.inputValRating.$error"
-						 ng-show="beerForm.inputValRating.$dirty"
-						 ng-messages-include="app/ui/forms/errorMessages.html">
-					</div>
+					<div class="col-md-7" nama-formerrors></div>
 				</div>
 
 			</fieldset>
