@@ -5,9 +5,9 @@
 		.module('nama.common')
 		.controller('NavController', navController);
 
-	navController.$inject = ['oauth'];
+	navController.$inject = ['user'];
 
-	function navController(oauth) {
+	function navController(user) {
 
 		var vm = this;
 
@@ -17,12 +17,13 @@
 			vm.isCollapsed = !vm.isCollapsed;
 		};
 
-		vm.login = function () {
-			
-			oauth.login(vm.username, vm.password)
-				.then(function (response) {
+		vm.profile = user.profile;
 
-					console.log(response);
+		vm.login = function () {
+			user.login(vm.username, vm.password)
+				.then(function (message) {
+
+					vm.message = message;
 				});
 		};
 	};

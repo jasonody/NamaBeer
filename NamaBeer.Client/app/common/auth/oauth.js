@@ -27,11 +27,7 @@
 				grant_type: 'password'
 			});
 
-			return $http.post(settings.serverPath + '/token', data, config)
-				.then(function (response) {
-
-					return response.data;
-				});
+			return $http.post(settings.serverPath + '/token', data, config);
 		}
 	}
 
