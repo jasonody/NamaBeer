@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('nama.ui')
+		.module('nama.common')
 		.directive('namaNav', namaNav);
 
 	namaNav.$inject = [];
@@ -11,11 +11,13 @@
 
 		return {
 			restrict: 'E',
-			templateUrl: '/app/ui/nav/nav.html',
+			templateUrl: '/app/common/nav/nav.html',
 			controller: 'NavController',
 			controllerAs: 'vm',
-			bindController: true,
-			scope: {}
+			bindToController: true,
+			scope: {
+				brand: '@'
+			}
 		};
 	}
 

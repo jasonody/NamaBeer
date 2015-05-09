@@ -2,12 +2,12 @@
 	'use strict';
 
 	angular
-		.module('nama.ui')
+		.module('nama.common')
 		.controller('NavController', navController);
 
-	navController.$inject = [];
+	navController.$inject = ['oauth'];
 
-	function navController() {
+	function navController(oauth) {
 
 		var vm = this;
 
@@ -18,8 +18,12 @@
 		};
 
 		vm.login = function () {
-			console.log(vm.password);
-			console.log(vm.username);
+			
+			oauth.login(vm.username, vm.password)
+				.then(function (response) {
+
+					console.log(response);
+				});
 		};
 	};
 

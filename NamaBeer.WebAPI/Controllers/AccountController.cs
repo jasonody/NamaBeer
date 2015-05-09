@@ -16,11 +16,13 @@ using Microsoft.Owin.Security.OAuth;
 using NamaBeer.WebAPI.Models;
 using NamaBeer.WebAPI.Providers;
 using NamaBeer.WebAPI.Results;
+using System.Web.Http.Cors;
 
 namespace NamaBeer.WebAPI.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
+	[EnableCors("*", "*", "*")]
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";

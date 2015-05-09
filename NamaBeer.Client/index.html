@@ -9,30 +9,35 @@
 	<link href="Content/style.css" rel="stylesheet" />
 </head>
 <body>
-	<nama-nav></nama-nav>
+	<nama-nav brand="Nama Beer"></nama-nav>
 
 	<div class="container">
 		<div class="row">
 			<div ng-include="'app/beer/beerList.html'"></div>
 		</div>
-</div>
+	</div>
+
 	<script src="scripts/angular.js"></script>
 	<script src="scripts/ui-bootstrap-tpls-0.12.1.min.js"></script>
 	<script src="scripts/angular-toastr.js"></script>
 	<script src="scripts/angular-toastr.tpls.js"></script>
 	<script src="scripts/angular-resource.js"></script>
 	<script src="scripts/angular-animate.js"></script>
-	<script src="Scripts/angular-messages.js"></script>>
+	<script src="Scripts/angular-messages.js"></script>
 	<script src="app/app.js"></script>
-	<script src="app/constants.js"></script>
+	<script src="app/config.js"></script>
 	<script src="app/beer/beer.js"></script>
 	<script src="app/beer/beerListController.js"></script>
 	<script src="app/beer/beerEditController.js"></script>
+	<script src="app/common/common.js"></script>
+	<script src="app/common/settings.js"></script>
+	<script src="app/common/utils/formEncode.js"></script>
+	<script src="app/common/auth/oauth.js"></script>
+	<script src="app/common/nav/NavController.js"></script>
+	<script src="app/common/nav/navDirective.js"></script>
 	<script src="app/ui/ui.js"></script>
 	<script src="app/ui/rating/ratingController.js"></script>
 	<script src="app/ui/rating/ratingDirective.js"></script>
-	<script src="app/ui/nav/NavController.js"></script>
-	<script src="app/ui/nav/navDirective.js"></script>
 	<script src="app/ui/forms/formgroupDirective.js"></script>
 	<script src="app/ui/forms/formerrorsDirective.js"></script>
 </body>

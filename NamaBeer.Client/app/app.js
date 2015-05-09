@@ -3,7 +3,8 @@
 
 	angular
 		.module('nama',
-			['nama.ui',
+			[ 'nama.common',
+				'nama.ui',
 				'ngResource',
 				'ngAnimate',
 				'ngMessages',

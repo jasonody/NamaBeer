@@ -16,6 +16,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace NamaBeer.WebAPI.DependencyResolution {
+	using NamaBeer.WebAPI.Controllers;
 	using NamaBeer.WebAPI.Models;
 	using StructureMap.Configuration.DSL;
 	using StructureMap.Graph;
@@ -30,6 +31,7 @@ namespace NamaBeer.WebAPI.DependencyResolution {
                     scan.WithDefaultConventions();
                 });
             For<IBeerRepository>().Use<BeerRepository>();
+			For<AccountController>().Use(new AccountController());
         }
 
         #endregion

@@ -33,6 +33,9 @@ namespace NamaBeer.WebAPI.Providers
 
             ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
 
+			//Need to add the below line to allow CORS when calling /token
+			context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+
             if (user == null)
             {
                 context.SetError("invalid_grant", "The user name or password is incorrect.");
