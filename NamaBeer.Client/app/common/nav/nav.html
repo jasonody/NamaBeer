@@ -25,7 +25,8 @@
 				<div ng-show="vm.message">{{vm.message}}</div>
 			</form>
 			<div class="navbar-right" ng-show="vm.profile.isLoggedIn">
-				<p class="navbar-text">Hello {{vm.username}}</p>
+				<span class="navbar-text">Hello {{vm.profile.username}}</span>
+				<a href="#" class="logout-link" ng-click="vm.logout()">Logout</a>
 			</div>
 		</div>
 	</div>

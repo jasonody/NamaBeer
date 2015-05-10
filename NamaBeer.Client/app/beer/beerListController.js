@@ -5,7 +5,7 @@
 		.module('nama')
 		.controller('BeerListController', BeerListController);
 
-	BeerListController.$inject = ['Beer', '$modal', user];
+	BeerListController.$inject = ['Beer', '$modal', 'user'];
 
 	function BeerListController(Beer, $modal, user) {
 
