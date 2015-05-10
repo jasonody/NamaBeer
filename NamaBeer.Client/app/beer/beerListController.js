@@ -5,14 +5,15 @@
 		.module('nama')
 		.controller('BeerListController', BeerListController);
 
-	BeerListController.$inject = ['Beer', '$modal'];
+	BeerListController.$inject = ['Beer', '$modal', user];
 
-	function BeerListController(Beer, $modal) {
+	function BeerListController(Beer, $modal, user) {
 
 		var vm = this;
 		var sortDirection = 'desc';
 		var sortColumn = 'DateOfTasting';
 		
+		vm.profile = user.profile;
 		vm.beers = [];
 
 		vm.sort = function (column) {
