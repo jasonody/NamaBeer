@@ -22,13 +22,17 @@ module.exports = function(config) {
 			'../NamaBeer.Client/scripts/angular-resource.js',
 			'../NamaBeer.Client/scripts/angular-animate.js',
 			'../NamaBeer.Client/scripts/angular-mocks.js',
-			'../NamaBeer.Client/app/ui/*.js',
-			'../NamaBeer.Client/app/ui/**/*.js',
+			'../NamaBeer.Client/scripts/angular-messages.js',
+			'../NamaBeer.Client/nama-framework/common/*.js',
+			'../NamaBeer.Client/nama-framework/common/**/*.js',
+			'../NamaBeer.Client/nama-framework/ui/*.js',
+			'../NamaBeer.Client/nama-framework/ui/**/*.js',
       '../NamaBeer.Client/app/*.js',
 			'../NamaBeer.Client/app/beer/**/*.js',
 			'./node_modules/bardjs/bower_components/sinon/index.js', //required for bardjs
 			'./node_modules/bardjs/dist/bard.js',
-      './app/**/*Spec.js'
+      './app/**/*Spec.js',
+			'./nama-framework/**/*Spec.js'
     ],
 
 

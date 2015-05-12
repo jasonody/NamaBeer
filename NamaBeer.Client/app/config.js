@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('nama')
+		.module('beer')
 		.config(config);
 
 	config.$inject = ['settingsProvider'];

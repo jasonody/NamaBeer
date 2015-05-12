@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('nama')
+		.module('beer')
 		.factory('Beer', Beer);
 
 	Beer.$inject = ['$resource', 'settings'];

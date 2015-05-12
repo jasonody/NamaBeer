@@ -1,6 +1,6 @@
 describe('BeerListController', function () {
 	
-	beforeEach(module('nama'));
+	beforeEach(module('beer'));
 	
 	var $controller;
 	var $rootScope;

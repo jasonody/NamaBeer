@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('nama',
+		.module('beer',
 			[ 'nama.common',
 				'nama.ui',
 				'ngResource',

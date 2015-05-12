@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('nama')
+		.module('beer')
 		.controller('BeerListController', BeerListController);
 
 	BeerListController.$inject = ['Beer', '$modal', 'user'];

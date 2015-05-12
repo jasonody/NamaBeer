@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-    .module('nama')
+    .module('beer')
     .controller('BeerEditController', BeerEditController);
 
 	BeerEditController.$inject = ['toastr', '$modalInstance', 'state', 'Beer'];

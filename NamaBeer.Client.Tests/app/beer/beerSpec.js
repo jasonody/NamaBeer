@@ -4,7 +4,7 @@ describe('Beer', function () {
 	
 	beforeEach(function () {
 		
-		bard.appModule('nama');
+		bard.appModule('beer');
 		bard.inject('$rootScope', '$httpBackend', 'Beer', 'settings');
 		
 		url = settings.serverPath + '/api/beers';
