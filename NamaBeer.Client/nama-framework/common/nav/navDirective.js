@@ -11,7 +11,7 @@
 
 		return {
 			restrict: 'E',
-			templateUrl: '/app/common/nav/nav.html',
+			templateUrl: '/nama-framework/common/nav/nav.html',
 			controller: 'NavController',
 			controllerAs: 'vm',
 			bindToController: true,

@@ -11,7 +11,7 @@
 
 		return {
 			restrict: 'E',
-			templateUrl: 'app/ui/rating/rating.html',
+			templateUrl: '/nama-framework/ui/rating/rating.html',
 			controller: 'NamaRatingController',
 			controllerAs: 'vm',
 			bindToController: true,

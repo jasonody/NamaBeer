@@ -3,7 +3,7 @@
 
 	angular
 		.module('nama.common')
-		.factory('localStorage', localStorage);
+		.factory('browserLocalStorage', localStorage);
 
 	localStorage.$inject = ['$window'];
 

@@ -5,9 +5,9 @@
 		.module('nama.common')
 		.factory('user', user);
 
-	user.$inject = ['oauth', 'localStorage'];
+	user.$inject = ['oauth', 'browserLocalStorage'];
 
-	function user(oauth, localStorage) {
+	function user(oauth, browserLocalStorage) {
 
 		var PROFILE_KEY = 'profile_$aa443';
 		
@@ -31,7 +31,7 @@
 
 		function initialize() {
 
-			var localProfile = localStorage.get(PROFILE_KEY);
+			var localProfile = browserLocalStorage.get(PROFILE_KEY);
 			if (localProfile) {
 				profile.username = localProfile.username,
 				profile.token = localProfile.token,
@@ -48,7 +48,7 @@
 					profile.token = response.data.access_token;
 					profile.tokenExpiration = new Date(response.data['.expires']);
 
-					localStorage.add(PROFILE_KEY, {
+					browserLocalStorage.add(PROFILE_KEY, {
 						username: profile.username,
 						token: profile.token,
 						tokenExpiration: profile.tokenExpiration
@@ -64,7 +64,7 @@
 
 		function logout() {
 
-			localStorage.remove(PROFILE_KEY);
+			browserLocalStorage.remove(PROFILE_KEY);
 			profile.username = '';
 			profile.token = '';
 			profile.tokenExpiration = new Date();
