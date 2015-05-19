@@ -1,16 +1,16 @@
-describe('FormEncode', function () {
+describe('formEncoding', function () {
 	
 	beforeEach(function () {
 		
 		bard.appModule('nama.common');
-		bard.inject('formEncode');
+		bard.inject('formEncoding');
 	});
 	
 	it('should form encode a JavaScript literal', function () {
 		
 		var data = { a: '123', b: '456' };
 		
-		var encoded = formEncode(data);
+		var encoded = formEncoding.encode(data);
 		expect(encoded).toEqual('a=123&b=456');
 	});
 	
@@ -18,7 +18,7 @@ describe('FormEncode', function () {
 		
 		var data = { a: 'some text', b: 'some more text' };
 		
-		var encoded = formEncode(data);
+		var encoded = formEncoding.encode(data);
 		expect(encoded).toEqual('a=some+text&b=some+more+text')
 	});
 	
@@ -26,7 +26,7 @@ describe('FormEncode', function () {
 		
 		var data = { a: '4>than1', b: '@some&'};
 		
-		var encoded = formEncode(data);
+		var encoded = formEncoding.encode(data);
 		expect(encoded).toEqual('a=4%3Ethan1&b=%40some%26');
 	});
 });

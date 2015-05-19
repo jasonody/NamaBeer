@@ -3,13 +3,17 @@
 
 	angular
 		.module('nama.common')
-		.factory('formEncode', formEncode);
+		.factory('formEncoding', formEncoding);
 
-	formEncode.$inject = [];
+	formEncoding.$inject = [];
 
-	function formEncode() {
+	function formEncoding() {
 
-		return function (data) {
+		return {
+			encode: encode
+		};
+
+		function encode(data) {
 
 			var items = [];
 

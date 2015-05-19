@@ -10,6 +10,11 @@ describe('Beer', function () {
 		url = settings.serverPath + '/api/beers';
 	});
 	
+	afterEach(function () {
+		$httpBackend.verifyNoOutstandingExpectation();
+		$httpBackend.verifyNoOutstandingRequest();
+	});
+	
 	it('should get beers', function () {
 		
 		var beers = [{ name: 'My beer' }, { name: 'My second beer' }];

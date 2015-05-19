@@ -5,9 +5,9 @@
 		.module('nama.common')
 		.factory('oauth', oauth);
 
-	oauth.$inject = ['$http', 'formEncode', 'settings'];
+	oauth.$inject = ['$http', 'formEncoding', 'settings'];
 
-	function oauth($http, formEncode, settings) {
+	function oauth($http, formEncoding, settings) {
 
 		return {
 			login: login
@@ -21,7 +21,7 @@
 				}
 			};
 
-			var data = formEncode({
+			var data = formEncoding.encode({
 				username: username,
 				password: password,
 				grant_type: 'password'

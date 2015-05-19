@@ -7,11 +7,17 @@
 
 	function settingsProvider() {
 
-		var values = {};
+		this.values = {
+			serverPath: ''
+		};
 
 		this.import = function (data) {
 
-			this.values = data;
+			for (var property in data) {
+				if (data.hasOwnProperty(property)) {
+					this.values[property] = data[property];
+				}
+			}
 		};
 
 		this.$get = function settingsFactory() {
