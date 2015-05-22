@@ -29,7 +29,6 @@ describe('oauth', function () {
 
 				expect(headers['Content-Type']).toEqual('application/x-www-form-urlencoded');
 				expect(data).toEqual(formEncodedData);
-				console.log(method, url, data, headers);
 
 				return [201, {}, {}];
 			});
