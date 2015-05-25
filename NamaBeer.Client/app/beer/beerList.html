@@ -19,6 +19,7 @@
 					<td><a href="#" ng-click="vm.sort('JasonRating')">Jason's Rating</a></td>
 					<td><a href="#" ng-click="vm.sort('ValRating')">Val's Rating</a></td>
 					<td></td>
+					<td></td>
 				</tr>
 			</thead>
 			<tbody>
@@ -33,6 +34,12 @@
 						<button class="btn btn-default" ng-click="vm.edit(beer)" 
 								ng-if="vm.profile.isLoggedIn">
 							Edit
+						</button>
+					</td>
+					<td>
+						<button class="btn btn-danger" ng-click="vm.delete(beer)"
+								ng-if="vm.profile.isLoggedIn">
+							Delete
 						</button>
 					</td>
 				</tr>

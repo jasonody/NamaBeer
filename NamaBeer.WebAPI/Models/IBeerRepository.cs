@@ -12,5 +12,6 @@ namespace NamaBeer.WebAPI.Models
 		Beer Get(int id);
 		Beer Add(Beer beer);
 		Beer Update(Beer beer);
+		void Delete(int id);
 	}
 }

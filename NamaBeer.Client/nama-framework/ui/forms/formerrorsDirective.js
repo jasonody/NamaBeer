@@ -27,7 +27,7 @@
 				var markup = '<div class="help-block"' + 
 					'	ng-messages="' + formName + '.' + inputName + '.$error"' +
 					'	ng-show="' + formName + '.' + inputName + '.$dirty"' +
-					'	ng-messages-include="app/ui/forms/errorMessages.html">' +
+					'	ng-messages-include="nama-framework/ui/forms/errorMessages.html">' +
 					'</div>';
 
 				element.append($compile(markup)(scope));

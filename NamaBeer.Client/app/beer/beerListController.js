@@ -77,6 +77,14 @@
 			});
 		};
 
+		vm.delete = function (beer) {
+
+			beer.$delete(function (data) {
+
+				vm.beers.splice(vm.beers.indexOf(beer), 1);
+			});
+		};
+
 		function init() {
 
 			Beer.query({ $orderby: sortColumn + ' ' + sortDirection }, bindBeers);

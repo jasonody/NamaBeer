@@ -67,6 +67,19 @@ namespace NamaBeer.WebAPI.Models
 			return beer;
 		}
 
+		public void Delete(int id)
+		{
+			var beers = this.Get() as List<Beer>;
+
+			var beer = beers.Find(b => b.Id == id);
+
+			if (beer != null)
+			{
+				beers.Remove(beer);
+			}
+
+			WriteData(beers);
+		}
 
 		private bool WriteData(IEnumerable<Beer> beers)
 		{

@@ -25,7 +25,18 @@
 						return beers;
 					}
 				},
-				update: { method: 'PUT' }
+				update: { method: 'PUT' },
+				save: {
+					method: 'POST',
+					transformResponse: function (data, headersGetter) {
+
+						var beer = angular.fromJson(data);
+
+						beer.dateOfTasting = new Date(beer.dateOfTasting);
+
+						return beer;
+					}
+				}
 			});
 	}
 

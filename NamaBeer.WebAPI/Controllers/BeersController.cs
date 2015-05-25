@@ -39,9 +39,11 @@ namespace NamaBeer.WebAPI.Controllers
         }
 
         // POST: api/Beers
-        public void Post([FromBody]Beer beer)
+        public Beer Post([FromBody]Beer beer)
         {
 			var addedBeer = _beerRepository.Add(beer);
+
+			return addedBeer;
         }
 
         // PUT: api/Beers/5
@@ -55,6 +57,7 @@ namespace NamaBeer.WebAPI.Controllers
         // DELETE: api/Beers/5
         public void Delete(int id)
         {
+			_beerRepository.Delete(id);
         }
     }
 }
