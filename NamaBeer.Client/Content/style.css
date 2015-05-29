@@ -1,3 +1,7 @@
 ﻿.inline-block {
 	display: inline-block;
 }
+
+.btn-confirm {
+	width: 80px;
+}

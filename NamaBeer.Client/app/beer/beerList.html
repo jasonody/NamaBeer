@@ -9,7 +9,6 @@
 	</div>
 	<div class="panel-body">
 		<table class="table">
-
 			<thead>
 				<tr>
 					<td><a href="#" ng-click="vm.sort('Name')">Name</a></td>
@@ -37,10 +36,12 @@
 						</button>
 					</td>
 					<td>
-						<button class="btn btn-danger" ng-click="vm.delete(beer)"
-								ng-if="vm.profile.isLoggedIn">
+						<nama-confirmation-button class="btn btn-confirm"
+												  click="vm.delete(beer)"
+												  primary-style="btn-danger"
+												  confirm-style="btn-warning">
 							Delete
-						</button>
+						</nama-confirmation-button>
 					</td>
 				</tr>
 			</tbody>
