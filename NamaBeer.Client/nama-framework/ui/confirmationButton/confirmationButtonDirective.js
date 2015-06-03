@@ -36,39 +36,16 @@
 						if (scope.showConfirmation) {
 							$timeout.cancel(timeout);
 
-							//if (attributes.confirmStyle) {
-							//	element[0].classList.remove(attributes.confirmStyle);
-							//}
-							//if (attributes.primaryStyle) {
-							//	element[0].classList.add(attributes.primaryStyle);
-							//}
-
 							scope.click();
 						} else {
-							//if (attributes.primaryStyle) {
-							//	element[0].classList.remove(attributes.primaryStyle);
-							//}
-							//if (attributes.confirmStyle) {
-							//	element[0].classList.add(attributes.confirmStyle);
-							//}
 
 							timeout = $timeout(function () {
 
-								//if (attributes.confirmStyle) {
-								//	element[0].classList.remove(attributes.confirmStyle);
-								//}
-								//if (attributes.primaryStyle) {
-								//	element[0].classList.add(attributes.primaryStyle);
-								//}
-
-								//scope.showConfirmation = !scope.showConfirmation;
 								switchButtonState(scope, element, attributes);
 							}, 3000);
 						}
 
 						switchButtonState(scope, element, attributes);
-
-						//scope.showConfirmation = !scope.showConfirmation;
 					});
 				});
 			}
