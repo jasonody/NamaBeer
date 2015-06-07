@@ -36,10 +36,11 @@
 						</button>
 					</td>
 					<td>
-						<nama-confirmation-button class="btn btn-confirm"
+						<nama-confirmation-button class="btn btn-confirm" ng-if="vm.profile.isLoggedIn"
 												  click="vm.delete(beer)"
 												  primary-style="btn-danger"
-												  confirm-style="btn-warning">
+												  confirm-style="btn-warning"
+												  wait-period="2">
 							Delete
 						</nama-confirmation-button>
 					</td>

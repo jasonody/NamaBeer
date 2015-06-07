@@ -39,10 +39,12 @@
 							scope.click();
 						} else {
 
+							var delay = parseInt(attributes.waitPeriod) || 3;
+
 							timeout = $timeout(function () {
 
 								switchButtonState(scope, element, attributes);
-							}, 3000);
+							}, delay * 1000);
 						}
 
 						switchButtonState(scope, element, attributes);
