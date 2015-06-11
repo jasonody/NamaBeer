@@ -36,7 +36,7 @@ describe('user', function() {
 			
 			expect(user.profile.username).toEqual('');
 			expect(user.profile.token).toEqual('');
-			expect(user.profile.tokenExpiration).toEqual(new Date());
+			expect(user.profile.tokenExpiration.toString()).toEqual(new Date().toString());
 		});
 	});
 	
@@ -102,7 +102,7 @@ describe('user', function() {
 			expect(browserLocalStorage.remove).toHaveBeenCalled();
 			expect(user.profile.username).toEqual('');
 			expect(user.profile.token).toEqual('');
-			expect(user.profile.tokenExpiration).toEqual(new Date());
+			expect(user.profile.tokenExpiration.toString()).toEqual(new Date().toString());
 		});
 	});
 });
