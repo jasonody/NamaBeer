@@ -105,4 +105,39 @@ describe('user', function() {
 			expect(user.profile.tokenExpiration.toString()).toEqual(new Date().toString());
 		});
 	});
+	
+	describe('profile.isLoggedIn', function () {
+
+		beforeEach(function () {
+
+			bard.inject('user');
+		});
+
+		it('should return true if there is an active token', function () {
+
+			user.profile.token = 'some token';
+			var date = new Date();
+			user.profile.tokenExpiration = date.setHours(new Date().getHours() + 2);
+			
+			expect(user.profile.isLoggedIn).toBeTruthy();
+		});
+
+		it('should return false if there is no token', function () {
+			
+			user.profile.token = '';
+			var date = new Date();
+			user.profile.tokenExpiration = date.setDate(new Date().getHours() + 2); 
+			
+			expect(user.profile.isLoggedIn).toBeFalsy();
+		});
+
+		it('should return false if the token has expired', function () {
+			
+			user.profile.token = 'some token';
+			var date = new Date();
+			user.profile.tokenExpiration = date.setDate(new Date().getHours() - 2);
+			
+			expect(user.profile.isLoggedIn).toBeFalsy();
+		});
+	});
 });
