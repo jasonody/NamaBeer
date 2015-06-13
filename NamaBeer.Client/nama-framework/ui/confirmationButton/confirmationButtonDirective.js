@@ -22,34 +22,28 @@
 				var timeout;
 
 				scope.showConfirmation = false;
+				scope.clicked = function () {
+
+							if (scope.showConfirmation) {
+								$timeout.cancel(timeout);
+
+								scope.click();
+							} else {
+
+								var delay = parseInt(attributes.waitPeriod) || 3;
+
+								timeout = $timeout(function () {
+
+									switchButtonState(scope, element, attributes);
+								}, delay * 1000);
+							}
+
+							switchButtonState(scope, element, attributes);
+				};
+
 				if (attributes.primaryStyle) {
 					element[0].classList.add(attributes.primaryStyle);
 				}
-
-				element.on('click', function (e) {
-
-					e.stopPropagation();
-					e.preventDefault();
-
-					scope.$apply(function () {
-
-						if (scope.showConfirmation) {
-							$timeout.cancel(timeout);
-
-							scope.click();
-						} else {
-
-							var delay = parseInt(attributes.waitPeriod) || 3;
-
-							timeout = $timeout(function () {
-
-								switchButtonState(scope, element, attributes);
-							}, delay * 1000);
-						}
-
-						switchButtonState(scope, element, attributes);
-					});
-				});
 			}
 		};
 
