@@ -1,7 +1,9 @@
-﻿<div class="form-group">
+﻿<div class="form-group autocomplete">
 	<input type="text" class="form-control" placeholder="{{vm.placeholder}}" 
-		   ng-model="vm.term" />
-	<ul>
-		<li ng-repeat="suggestion in vm.suggestions">{{suggestion}}</li>
+		   ng-model="vm.terms" ng-change="vm.getSuggestions()" />
+	<ul ng-show="vm.showSuggestions">
+		<li ng-repeat="suggestion in vm.suggestions">
+			<div ng-click="vm.selectSuggestion(suggestion)">{{suggestion}}</div>
+		</li>
 	</ul>
 </div>

@@ -15,31 +15,53 @@
 			templateUrl: '/nama-framework/ui/autocomplete/autocomplete.html',
 			scope: {
 				model: '=',
-				placeholder: '@'
+				placeholder: '@',
+				url: '@',
+				resultsProperty: '@'
 			},
 			controllerAs: 'vm',
 			bindToController: true,
 			link: function (scope, element, attributes) {
 
-				$timeout(function () {
+				//$timeout(function () {
 
-					scope.vm.model = scope.vm.term;
-					$http.get(attributes.url + scope.vm.term)
-					.success(function (data) {
+				//	scope.vm.model = scope.vm.terms;
+				//	$http.get(attributes.url + scope.vm.terms)
+				//	.success(function (data) {
 
-						scope.vm.suggestions = data[attributes.resultsproperty];
-					});
+				//		scope.vm.suggestions = data[attributes.resultsproperty];
+				//		scope.vm.showSuggestions = true;
+				//	});
 
-				}, 2000);
+				//}, 2000);
 			},
-			controller: function () {
+			controller: function ($timeout) {
 
+				var vm = this;
+				var timeout;
+				
+				vm.showSuggestions = false;
+				vm.selectSuggestion = function (suggestion) {
+
+					vm.model = vm.terms = suggestion;
+					vm.showSuggestions = false;
+				};
+
+				vm.getSuggestions = function () {
+
+					$timeout.cancel(timeout);
+					timeout = $timeout(function () {
+
+						$http.get(vm.url + vm.terms)
+						.success(function (data) {
+
+							vm.suggestions = data[vm.resultsProperty];
+							vm.showSuggestions = true;
+						});
+					}, 1500);
+				}
 			}
 		};
 	}
 
 }());
-
-//http://www.htmlxprs.com/post/32/creating-an-angularjs-autocomplete-tag-input-widget
-//http://stackoverflow.com/questions/18460374/angularjs-autocomplete-from-http
-//https://github.com/JustGoscha/allmighty-autocomplete/blob/master/script/autocomplete.js
