@@ -12,9 +12,11 @@ namespace NamaBeer.WebAPI.Models
 	/// </summary>
 	public class BeerRepository : IBeerRepository
 	{
+		private static readonly string _filePath = @"~/App_Data/beers.json";
+
 		public IEnumerable<Beer> Get()
 		{
-			var filePath = HostingEnvironment.MapPath(@"~/App_Data/beer.json");
+			var filePath = HostingEnvironment.MapPath(_filePath);
 
 			var json = System.IO.File.ReadAllText(filePath);
 
@@ -84,7 +86,7 @@ namespace NamaBeer.WebAPI.Models
 		private bool WriteData(IEnumerable<Beer> beers)
 		{
 			// Write out the Json
-			var filePath = HostingEnvironment.MapPath(@"~/App_Data/beer.json");
+			var filePath = HostingEnvironment.MapPath(_filePath);
 
 			var json = JsonConvert.SerializeObject(beers, Formatting.Indented);
 			System.IO.File.WriteAllText(filePath, json);
