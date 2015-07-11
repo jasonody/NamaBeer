@@ -31,6 +31,7 @@ namespace NamaBeer.WebAPI.DependencyResolution {
                     scan.WithDefaultConventions();
                 });
             For<IBeerRepository>().Use<BeerRepository>();
+			For<IStyleRepository>().Use<StyleRepository>();
 			For<AccountController>().Use(new AccountController());
         }
 

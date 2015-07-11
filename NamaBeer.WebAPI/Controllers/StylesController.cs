@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NamaBeer.WebAPI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -12,15 +13,24 @@ namespace NamaBeer.WebAPI.Controllers
 	[EnableCors("*", "*", "*")]
     public class StylesController : ApiController
     {
-		[EnableQuery(PageSize=5)]
-		public dynamic Get()
+		private readonly IStyleRepository _styleRepository;
+
+		public StylesController(IStyleRepository styleRepository)
 		{
+			_styleRepository = styleRepository;
+		}
+
+		//[EnableQuery(PageSize=5)]
+		public dynamic Get(string term)
+		{
+			var suggestions = 
+				(from style in _styleRepository.Get()
+				where style.ToLower().Contains(term.ToLower())
+				orderby style
+				select style).Take(5);
+
 			return new {
-				suggestions = new List<string> 
-				{
-					"India Pale Ale",
-					"Stout"
-				}.AsQueryable()
+				suggestions = suggestions.ToList()
 			}; 
 		}
     }
