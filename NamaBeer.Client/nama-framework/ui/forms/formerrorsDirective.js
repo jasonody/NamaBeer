@@ -5,32 +5,37 @@
 		.module('nama.ui')
 		.directive('namaFormerrors', namaFormerrors);
 
-	namaFormerrors.$inject = ['$compile'];
+	namaFormerrors.$inject = ['$compile', '$timeout'];
 
-	function namaFormerrors($compile) {
+	function namaFormerrors($compile, $timeout) {
 
 		return {
 			restict: 'AE',
 			require: '^form',
 			link: function (scope, element, attributes, controller) {
 				
-				var inputName = attributes.for;
+				$timeout(function () {
 
-				if (inputName === undefined) {
-					var input = element.parent()[0].querySelector('input, textarea, select');
-					inputName = input.getAttribute('name');
-				}
+					var inputName = attributes.for;
 
-				var form = controller;
-				var formName = controller.$name;
+					if (inputName === undefined) {
+						console.log(element);
+						var input = element.parent()[0].querySelector('input, textarea, select');
+						console.log(input);
+						inputName = input.getAttribute('name');
+					}
 
-				var markup = '<div class="help-block"' + 
-					'	ng-messages="' + formName + '.' + inputName + '.$error"' +
-					'	ng-show="' + formName + '.' + inputName + '.$dirty"' +
-					'	ng-messages-include="nama-framework/ui/forms/errorMessages.html">' +
-					'</div>';
+					var form = controller;
+					var formName = controller.$name;
 
-				element.append($compile(markup)(scope));
+					var markup = '<div class="help-block"' +
+						'	ng-messages="' + formName + '.' + inputName + '.$error"' +
+						'	ng-show="' + formName + '.' + inputName + '.$dirty"' +
+						'	ng-messages-include="nama-framework/ui/forms/errorMessages.html">' +
+						'</div>';
+
+					element.append($compile(markup)(scope));
+				}, 100);
 			}
 		};
 	}

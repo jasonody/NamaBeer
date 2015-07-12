@@ -32,11 +32,11 @@
 
 				<div nama-formgroup>
 					<label class="col-md-2" for="inputStyle">Style</label>
-					<div class="col-md-6">
-						<input id="inputStyle" name="inputStyle" type="text"
-							   placeholder="Style" ng-model="vm.beer.style"
-							   required />
-					</div>
+					<nama-autocomplete id="inputStyle" name="inputStyle" class="col-md-6"
+										model="vm.beer.style" placeholder="Style"
+										url="http://localhost:58500/api/styles?term="
+										results-property="suggestions">
+					</nama-autocomplete>
 					<div class="col-md-4" nama-formerrors></div>
 				</div>
 
