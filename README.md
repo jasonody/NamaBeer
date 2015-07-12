@@ -1,6 +1,9 @@
 # Nama Beer
 
-An application built on top of the Nama Framework using AngularJS and ASP.NET WebAPI to help track craft beer.
+An example application built on top of the Nama Framework using AngularJS and ASP.NET WebAPI to help track craft beer.
+
+Username: `Jason`  
+Password: `Password`
 
 # Nama Framework
 
