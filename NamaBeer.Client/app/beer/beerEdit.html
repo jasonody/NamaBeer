@@ -27,16 +27,18 @@
 							   placeholder="Brewery" ng-model="vm.beer.brewery"
 							   required />
 					</div>
+					<pre>{{beerForm.inputBrewery | json}}</pre>
 					<div class="col-md-4" nama-formerrors></div>
 				</div>
 
 				<div nama-formgroup>
 					<label class="col-md-2" for="inputStyle">Style</label>
 					<nama-autocomplete id="inputStyle" name="inputStyle" class="col-md-6"
-										model="vm.beer.style" placeholder="Style"
-										url="http://localhost:58500/api/styles?term="
-										results-property="suggestions">
+									   model="vm.beer.style" placeholder="Style"
+									   url="http://localhost:58500/api/styles?term="
+									   results-property="suggestions" required>
 					</nama-autocomplete>
+					<pre>{{beerForm.inputStyle | json}}</pre>
 					<div class="col-md-4" nama-formerrors></div>
 				</div>
 

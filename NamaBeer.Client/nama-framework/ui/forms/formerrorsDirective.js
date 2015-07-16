@@ -19,9 +19,7 @@
 					var inputName = attributes.for;
 
 					if (inputName === undefined) {
-						console.log(element);
 						var input = element.parent()[0].querySelector('input, textarea, select');
-						console.log(input);
 						inputName = input.getAttribute('name');
 					}
 

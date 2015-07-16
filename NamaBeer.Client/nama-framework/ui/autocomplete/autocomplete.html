@@ -1,7 +1,5 @@
 ﻿<div class="autocomplete">
-	<input type="text" placeholder="{{vm.placeholder}}" 
-		   ng-model="vm.terms" ng-change="vm.getSuggestions()" required 
-		   name="autocomplete" id="autocomplete" />
+	<input type="text" ng-model="vm.terms" ng-change="vm.getSuggestions()" name="{{vm.name}}" />
 	<div></div>
 	<ul ng-show="vm.showSuggestions">
 		<li ng-repeat="suggestion in vm.suggestions">
