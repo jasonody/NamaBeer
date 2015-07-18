@@ -126,7 +126,7 @@ describe('user', function() {
 			
 			user.profile.token = '';
 			var date = new Date();
-			user.profile.tokenExpiration = date.setDate(new Date().getHours() + 2); 
+			user.profile.tokenExpiration = date.setHours(new Date().getHours() + 2); 
 			
 			expect(user.profile.isLoggedIn).toBeFalsy();
 		});
@@ -135,7 +135,7 @@ describe('user', function() {
 			
 			user.profile.token = 'some token';
 			var date = new Date();
-			user.profile.tokenExpiration = date.setDate(new Date().getHours() - 2);
+			user.profile.tokenExpiration = date.setHours(new Date().getHours() - 2);
 			
 			expect(user.profile.isLoggedIn).toBeFalsy();
 		});
