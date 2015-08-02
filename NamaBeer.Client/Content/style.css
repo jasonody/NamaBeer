@@ -5,3 +5,7 @@
 .btn-confirm {
 	width: 80px;
 }
+
+body {
+	min-width: 650px;
+}
