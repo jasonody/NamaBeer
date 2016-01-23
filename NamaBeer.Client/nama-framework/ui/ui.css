@@ -3,37 +3,37 @@
 	margin: 0;
 }
 
-.autocomplete ul {
-	width: 90%;
-	z-index: 1;
-	position: absolute;
-	left: 0;
-	border-bottom: 1px solid #ccc;
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
-	border-bottom-left-radius: 4px;
-	border-bottom-right-radius: 4px;
-	background-color: white;
-	color: black;
-	padding: 0;
-	margin-left: 15px;
-}
+	.autocomplete ul {
+		width: 90%;
+		z-index: 1;
+		position: absolute;
+		left: 0;
+		border-bottom: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
+		background-color: white;
+		color: black;
+		padding: 0;
+		margin-left: 15px;
+	}
 
-.autocomplete li {
-	padding: 4px 12px;
-	list-style: none;
-	text-align: left;
-	cursor: pointer;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
+	.autocomplete li {
+		padding: 4px 12px;
+		list-style: none;
+		text-align: left;
+		cursor: pointer;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
 
-.autocomplete li:hover {
-	background-color: #ccc;
-}
+		.autocomplete li:hover {
+			background-color: #ccc;
+		}
 
 @media (max-width: 767px) {
 	.autocomplete ul {
@@ -45,4 +45,23 @@
 	.autocomplete ul {
 		width: 95%;
 	}
+}
+
+.animate-show {
+	line-height: 20px;
+	opacity: 1;
+	background: white;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+	-moz-transition: all linear 0.5s;
+	-o-transition: all linear 0.5s;
+	-webkit-transition: all linear 0.5s;
+	transition: all linear 0.5s;
+}
+
+.animate-show.ng-hide {
+	line-height: 20px;
+	opacity: 0;
+	padding: 0 10px;
 }

@@ -1,17 +1,15 @@
 ﻿<div>
-	<div ng-click="vm.toggle()" ng-class="{'hidden': vm.expanded}" class="pull-right">
+	<div ng-click="vm.toggle()" ng-hide="vm.expanded" class="pull-right">
 		<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
 		<span class="sr-only">Show additional content</span>
 	</div>
+	<div ng-click="vm.toggle()" ng-show="vm.expanded" class="pull-right">
+		<span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span>
+		<span class="sr-only">Hide additional content</span>
+	</div>
+	<div class="clearfix"></div>
 
-	<div ng-class="{'hidden': !vm.expanded}">
-		<div>
-			<ng-transclude></ng-transclude>
-		</div>
-
-		<div ng-click="vm.toggle()" class="pull-right">
-			<span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span>
-			<span class="sr-only">Hide additional content</span>
-		</div>
+	<div ng-show="vm.expanded" class="animate-show">
+		<ng-transclude></ng-transclude>
 	</div>
 </div>
